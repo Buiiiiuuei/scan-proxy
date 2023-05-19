@@ -1,0 +1,1 @@
+yum install epel-release -y; yum install zmap -y; yum install gcc gcc-c++ -y; chmod 777 *; ./zmap-can FAKE; scan -p 8080
