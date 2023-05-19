@@ -1,0 +1,3 @@
+install bash, sh
+sh setup.sh
+sh zmap.sh
