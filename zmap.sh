@@ -1,0 +1,1 @@
+zmap -p $1 -q -B10G | ./prox -p $1
